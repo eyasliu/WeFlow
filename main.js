@@ -17,7 +17,7 @@ let willClose = false;
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        width: 360,
+        // width: 360,
         minHeight: 572,
         resizable: false,
         title: 'WeFlow',
@@ -28,7 +28,7 @@ function createWindow() {
     mainWindow.loadURL('file://' + __dirname + '/app.html');
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on('close', function (event) {
         if (process.platform !== 'win32' && !willClose) {
